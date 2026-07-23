@@ -3,6 +3,9 @@ const cors = require("cors");
 const { connectDB } = require("./config/db");
 
 const movieRoutes = require("./routes/movieRoutes");
+const theatreRoutes = require("./routes/theatreRoutes");
+
+
 
 const app = express();
 
@@ -12,6 +15,7 @@ app.use(express.json());
 connectDB();
 
 app.use("/movies", movieRoutes);
+app.use("/theatres", theatreRoutes);
 
 const PORT = 5000;
 
